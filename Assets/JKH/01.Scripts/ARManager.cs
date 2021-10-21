@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 public class ARManager : MonoBehaviour
+    //1
 {
     public GameObject indicator; //indicator
     public GameObject carFactory; //자동차공장

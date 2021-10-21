@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+
+//이미지 이름, 해당 이미지가 인식되었을떄 나타나는 오브젝트
+[System.Serializable]
+public struct MarkerInfo
+{
+    public string name;
+    public GameObject obj;
+}
 public class MultiImage : MonoBehaviour
 {
     //마커의 정보들
@@ -11,13 +19,7 @@ public class MultiImage : MonoBehaviour
     ARTrackedImageManager trackedMgr;
 
 
-    //이미지 이름, 해당 이미지가 인식되었을떄 나타나는 오브젝트
-    [System.Serializable]
-    public struct MarkerInfo
-    {
-        public string name;
-        public GameObject obj;
-    }
+    
 
     // Start is called before the first frame update
     void Start()
