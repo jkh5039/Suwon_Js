@@ -13,16 +13,21 @@ public class JHW_WheelCollider : MonoBehaviour
     public float wheelspeed;
     public float acceleration;
 
-    public bool isaccel;
-    public bool isbreak;
+    public bool isaccel=false;
+    public bool isback=false;
+
+    public Rigidbody car;
 
     private void Start()
     {
         joystick = GetComponent<JHW_JoyStick>();
         acceleration = 0;
+        car = GetComponent<Rigidbody>();
     }
+
     public void FixedUpdate()
     {
+        // 방향, 구동
         float motor = maxMotorTorque * acceleration;
         //float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
         float steering = joystick.direction.x * wheelspeed;
@@ -41,26 +46,45 @@ public class JHW_WheelCollider : MonoBehaviour
             }
         }
 
-        if(isaccel==false)
+        if (isaccel == true)
+        {
+            acceleration += 0.1f;
+            if (acceleration >= 1) acceleration = 1;
+        }
+        if(isback==true)
+        {
+            acceleration -= 0.1f;
+            if (acceleration <= -1) acceleration = -1;
+        }
+        if(isaccel==false && isback==false)
         {
             acceleration = 0;
         }
-        
+        //if(motor== 0)
+        //{
+        //  //  car.velocity = Vector3.Lerp(car.velocity, new Vector3(0, 0, 0), 2f) ;
+        //}
     }
     //엑셀버튼을 누르면 1을 전달하게 떼면 0을 전달하도록
-    //브레이크 버튼을 누르면 0까지 음수화
+    //브레이크 버튼을 누르면 0까지 마이너스
+    //아무것도 안누르면 0으로
 
-    void AccelBtn()
+    public void AccelBtnDown()
     {
         isaccel = true;
-        acceleration += 0.1f;
     }
-    void breakBtn()
+    public void AccelBtnUP()
     {
-        isbreak = true;
-        acceleration -= 0.1f;
+        isaccel = false;
     }
-
+    public void BackBtnDown()
+    {
+        isback = true;
+    }
+    public void BackBtnUp()
+    {
+        isback = false;
+    }
 }
 
 [System.Serializable]
