@@ -702,7 +702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &635161620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,13 +1086,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241517279}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dac00c9fd7f41d647b78aea5ec6a9ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   indicator: {fileID: 75198089}
-  carFactory: {fileID: 1679316337262068, guid: 400ae1c92d3d7164c98601f4394b0931, type: 3}
+  carFactory: {fileID: 5745642905623772732, guid: aa5afefdf66ce784cbed0cdf91b28d55, type: 3}
   useAR: 1
   ground: {fileID: 292223436}
   camRotae: {fileID: 1257458310}
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241517279}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
   m_Name: 
