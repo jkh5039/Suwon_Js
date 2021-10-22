@@ -29,8 +29,8 @@ public class JHW_WheelCollider : MonoBehaviour
     {
         // 방향, 구동
         float motor = maxMotorTorque * acceleration;
-        //float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-        float steering = joystick.direction.x * wheelspeed;
+        //float steering = maxSteeringAngle * Input.GetAxis("Horizontal"); //pc
+        float steering = joystick.direction.x * wheelspeed; //모바일
 
         foreach (AxleInfo axleInfo in axleInfos)
         {

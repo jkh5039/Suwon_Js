@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class JHW_Car : MonoBehaviour
 {
+    public int crashCount;
+
+    //public static JHW_Car instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        crashCount=0;
     }
 
     // Update is called once per frame
@@ -17,18 +20,13 @@ public class JHW_Car : MonoBehaviour
         
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.transform.CompareTag("obstacle") || collision.transform.CompareTag("ground"))
-    //    {
-    //        print("자동차가 충돌했습니다");
-    //    }
-    //}
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("obstacle") || other.transform.CompareTag("ground"))
         {
             print("자동차가 충돌했습니다");
+            crashCount++;
         }
     }
 }
