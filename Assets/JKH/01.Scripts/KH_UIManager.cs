@@ -30,6 +30,6 @@ public class KH_UIManager : MonoBehaviour
     }
     public void OnClickParking()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("JHW_MiniGame1");
     }
 }
