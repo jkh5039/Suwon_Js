@@ -460,7 +460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &221020918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,8 +930,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a0cac6532ab124cb9a7f476390f9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carSpec: {fileID: 0}
-  details: {fileID: 0}
+  carSpec: {fileID: 221020917}
+  details: {fileID: 782702175}
 --- !u!4 &308864086
 Transform:
   m_ObjectHideFlags: 0
