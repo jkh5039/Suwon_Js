@@ -315,7 +315,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 203050769}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1241517286}
+        m_TargetAssemblyTypeName: MultiImage, Assembly-CSharp
+        m_MethodName: OnClickNotice_O
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &203050769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,7 +714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &635161620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,7 +973,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1098530644}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1241517286}
+        m_TargetAssemblyTypeName: MultiImage, Assembly-CSharp
+        m_MethodName: OnClickNotice_X
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1098530644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,6 +1152,7 @@ MonoBehaviour:
     obj: {fileID: 1543511480}
   - name: malibu
     obj: {fileID: 1056841110}
+  notice: {fileID: 635161619}
 --- !u!1 &1257458304
 GameObject:
   m_ObjectHideFlags: 0

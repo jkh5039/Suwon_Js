@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.UI;
 
 //이미지 이름, 해당 이미지가 인식되었을떄 나타나는 오브젝트
 [System.Serializable]
@@ -17,8 +18,8 @@ public class MultiImage : MonoBehaviour
     public MarkerInfo[] markerInfos;
     //ARTrackedImageManager
     ARTrackedImageManager trackedMgr;
-
-
+    //Notice UI
+    public GameObject notice;
     
 
     // Start is called before the first frame update
@@ -49,6 +50,9 @@ public class MultiImage : MonoBehaviour
                         markerInfos[j].obj.transform.position = trackedImage.transform.position;
                         //정의한 obj의 윗방향을 트래킹된 이미지의 윗방향으로 한다.
                         markerInfos[j].obj.transform.up = trackedImage.transform.up;
+                        //@@@수정한것
+                        //notice 실행한다 (UI는 고정)
+                        notice.SetActive(true);
 
 
                     }
@@ -73,5 +77,18 @@ public class MultiImage : MonoBehaviour
     void Update()
     {
         
+    }
+
+    //Notice 버튼 구현
+    public void OnClickNotice_O()
+    {
+        //그 해당 자동차의 UI를 보여준다
+        //여기다가?
+    }
+
+    public void OnClickNotice_X()
+    {
+        //Notice UI 끈다
+        notice.SetActive(false);
     }
 }
