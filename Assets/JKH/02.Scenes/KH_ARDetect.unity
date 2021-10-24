@@ -1153,6 +1153,8 @@ MonoBehaviour:
   - name: malibu
     obj: {fileID: 1056841110}
   notice: {fileID: 635161619}
+  noticeCarName: {fileID: 1980384728}
+  isNotice: 0
 --- !u!1 &1257458304
 GameObject:
   m_ObjectHideFlags: 0

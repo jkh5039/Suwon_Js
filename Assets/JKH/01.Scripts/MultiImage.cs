@@ -20,7 +20,9 @@ public class MultiImage : MonoBehaviour
     ARTrackedImageManager trackedMgr;
     //Notice UI
     public GameObject notice;
-    
+    public Text noticeCarName;
+    string carName;
+    public bool isNotice;
 
     // Start is called before the first frame update
     void Start()
@@ -44,15 +46,20 @@ public class MultiImage : MonoBehaviour
                     //만약에 이미지를 트래킹(인식) 하고 있다면,
                     if (trackedImage.trackingState == TrackingState.Tracking)
                     {
-                        //정의한 obj활성화
-                        markerInfos[j].obj.SetActive(true);
-                        //정의한 obj를 트래킹된 이미지의 위치에 놓는다
-                        markerInfos[j].obj.transform.position = trackedImage.transform.position;
-                        //정의한 obj의 윗방향을 트래킹된 이미지의 윗방향으로 한다.
-                        markerInfos[j].obj.transform.up = trackedImage.transform.up;
-                        //@@@수정한것
-                        //notice 실행한다 (UI는 고정)
+                        
+                        
                         notice.SetActive(true);
+                        noticeCarName.text =
+                                carName + "차가 인식되었습니다." + "\n"
+                                + carName + "차에 대한 정보를 확인 하시겠습니까?";
+                        if (markerInfos[j].name == "Audi")
+                        {
+
+                            //텍스트 변경
+                            carName = "Audi";
+                            //만약 CarName 여러개해서 변수 넣는다
+                            
+                        }
 
 
                     }
