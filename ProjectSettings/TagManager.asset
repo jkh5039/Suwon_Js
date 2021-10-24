@@ -6,6 +6,7 @@ TagManager:
   tags:
   - obstacle
   - ground
+  - parkingzone
   layers:
   - Default
   - TransparentFX
