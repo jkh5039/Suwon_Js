@@ -3,17 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 public class ARManager : MonoBehaviour
-    //1
+    
 {
+    public static ARManager instance;
+
     public GameObject indicator; //indicator
     public GameObject carFactory; //자동차공장
     ARRaycastManager arRayManager;
     public bool useAR;
     public GameObject ground;
     public CamRotate camRotae;
+    public bool isPark;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
+        isPark = true;
+
         arRayManager = GetComponent<ARRaycastManager>();
 
         //만약 ar을 사용한다면
@@ -66,7 +82,7 @@ public class ARManager : MonoBehaviour
 
         //만약에 마우스 왼쪽클릭을 한다면
         //만약에 indicator가 활성화 상태라면
-        if (Input.GetButtonDown("Fire1") && indicator.activeSelf)
+        if (Input.GetButtonDown("Fire1") && indicator.activeSelf && isPark)
         {
             //자동차 공장에서 자동차 생성
             GameObject car = Instantiate(carFactory);
@@ -74,6 +90,7 @@ public class ARManager : MonoBehaviour
             car.transform.position = indicator.transform.position;
             //생성된 자동차의 앞방향을 indicator의 앞방향으로 한다
             car.transform.forward = indicator.transform.forward;
+            isPark = false;
 
 
         }
