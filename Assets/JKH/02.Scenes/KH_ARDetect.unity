@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicator: {fileID: 75198089}
-  carFactory: {fileID: 5745642905623772732, guid: aa5afefdf66ce784cbed0cdf91b28d55, type: 3}
+  carFactory: {fileID: 5176147555176492956, guid: 045a160aebba0a5418a755dbfd271373, type: 3}
   useAR: 1
   ground: {fileID: 292223436}
   camRotae: {fileID: 1257458310}

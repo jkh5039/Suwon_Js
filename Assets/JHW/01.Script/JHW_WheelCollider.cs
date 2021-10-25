@@ -29,8 +29,8 @@ public class JHW_WheelCollider : MonoBehaviour
     {
         // 방향, 구동
         float motor = maxMotorTorque * acceleration;
-        //float steering = maxSteeringAngle * Input.GetAxis("Horizontal"); //pc
-        float steering = joystick.direction.x * wheelspeed; //모바일
+        float steering = maxSteeringAngle * Input.GetAxis("Horizontal"); //pc
+        //float steering = joystick.direction.x * wheelspeed; //모바일
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -45,7 +45,7 @@ public class JHW_WheelCollider : MonoBehaviour
                 axleInfo.rightWheel.motorTorque = motor;
             }
         }
-
+        
         if (isaccel == true)
         {
             acceleration += 0.1f;
@@ -60,15 +60,9 @@ public class JHW_WheelCollider : MonoBehaviour
         {
             acceleration = 0;
         }
-        //if(motor== 0)
-        //{
-        //  //  car.velocity = Vector3.Lerp(car.velocity, new Vector3(0, 0, 0), 2f) ;
-        //}
+        
     }
-    //엑셀버튼을 누르면 1을 전달하게 떼면 0을 전달하도록
-    //브레이크 버튼을 누르면 0까지 마이너스
-    //아무것도 안누르면 0으로
-
+    
     public void AccelBtnDown()
     {
         isaccel = true;
@@ -95,5 +89,6 @@ public class AxleInfo
     public bool motor; // is this wheel attached to motor?
     public bool steering; // does this wheel apply steer angle?
 }
+
 
 
