@@ -14,6 +14,7 @@ public class JHW_ParkingZone : MonoBehaviour
     bool issuccess = false;
 
     JHW_Car car;
+    JHW_ParkingCheck pc;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +23,13 @@ public class JHW_ParkingZone : MonoBehaviour
         ParkingZonePoint = GameObject.Find("ParkingZonePoint");
        
         car = GameObject.Find("Body").GetComponent<JHW_Car>();
+        pc = GameObject.Find("ParkingZone").GetComponent<JHW_ParkingCheck>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (successDistance >= Vector3.Distance(ParkingPoint.transform.position, ParkingZonePoint.transform.position))
+        if (successDistance >= Vector3.Distance(ParkingPoint.transform.position, ParkingZonePoint.transform.position) && pc.AllChecked==true)
         {
             if (issuccess == false)
             {
