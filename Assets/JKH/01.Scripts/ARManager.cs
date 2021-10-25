@@ -82,9 +82,9 @@ public class ARManager : MonoBehaviour
 
         //만약에 마우스 왼쪽클릭을 한다면
         //만약에 indicator가 활성화 상태라면
-        if (Input.GetButtonDown("Fire1") && indicator.activeSelf && isPark)
+        if (Input.GetButtonDown("Fire1") && indicator.activeSelf && isPark) //addBool
         {
-            //자동차 공장에서 자동차 생성
+            //자동차 공장에서 자동차 생성 //맵 생성
             GameObject car = Instantiate(carFactory);
             //생성된 자동차를 indicator위치에 놓는다
             car.transform.position = indicator.transform.position;
