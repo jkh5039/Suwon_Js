@@ -90,6 +90,8 @@ public class MultiImage : MonoBehaviour
     public void OnClickNotice_O()
     {
         //그 해당 자동차의 UI를 보여준다
+        KH_UIManager.instance.OnAudi();
+        notice.SetActive(false);
         //여기다가?
     }
 

@@ -6,6 +6,20 @@ using UnityEngine.UI;
 
 public class KH_UIManager : MonoBehaviour
 {
+    public static KH_UIManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;            
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     //자동차 스펙 메뉴
     public GameObject carSpec;
     //자동차 세부사항
@@ -33,6 +47,10 @@ public class KH_UIManager : MonoBehaviour
     {
         //버튼 누르면 세부사항 켜진다
         details.SetActive(true);
+    }
+    public void onClickAudiDetailsBack()
+    {
+        details.SetActive(false);
     }
     public void OnClickParking()
     {
