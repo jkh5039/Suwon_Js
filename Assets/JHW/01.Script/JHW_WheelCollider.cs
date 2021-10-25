@@ -20,7 +20,7 @@ public class JHW_WheelCollider : MonoBehaviour
 
     private void Start()
     {
-        joystick = GetComponent<JHW_JoyStick>();
+       joystick = GameObject.Find("SportsVehicleWhite").GetComponent<JHW_JoyStick>();
         acceleration = 0;
         car = GetComponent<Rigidbody>();
     }
@@ -29,8 +29,8 @@ public class JHW_WheelCollider : MonoBehaviour
     {
         // 방향, 구동
         float motor = maxMotorTorque * acceleration;
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal"); //pc
-        //float steering = joystick.direction.x * wheelspeed; //모바일
+        //float steering = maxSteeringAngle * Input.GetAxis("Horizontal"); //pc
+        float steering = joystick.direction.x * wheelspeed*50; //모바일
 
         foreach (AxleInfo axleInfo in axleInfos)
         {

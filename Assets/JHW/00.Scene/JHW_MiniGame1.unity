@@ -365,6 +365,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2023822600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1806393936269795070, guid: 045a160aebba0a5418a755dbfd271373, type: 3}
+  m_PrefabInstance: {fileID: 5176147553851605213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8a4bc8d3959464ab293b4a4956e179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5176147553851605213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,6 +383,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1248495678017927032, guid: 045a160aebba0a5418a755dbfd271373, type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 2023822600}
+    - target: {fileID: 1266778771162717443, guid: 045a160aebba0a5418a755dbfd271373, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5176147555176492956, guid: 045a160aebba0a5418a755dbfd271373, type: 3}
       propertyPath: m_Name
       value: GAME1
