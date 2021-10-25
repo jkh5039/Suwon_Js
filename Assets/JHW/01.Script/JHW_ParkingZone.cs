@@ -22,7 +22,7 @@ public class JHW_ParkingZone : MonoBehaviour
         ParkingPoint = GameObject.Find("ParkingPoint");
         ParkingZonePoint = GameObject.Find("ParkingZonePoint");
        
-        car = GameObject.Find("Body").GetComponent<JHW_Car>();
+        car = GameObject.Find("SportsVehicleWhite").GetComponent<JHW_Car>();
         pc = GameObject.Find("ParkingZone").GetComponent<JHW_ParkingCheck>();
     }
 

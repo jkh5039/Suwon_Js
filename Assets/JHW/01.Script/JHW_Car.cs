@@ -20,13 +20,21 @@ public class JHW_Car : MonoBehaviour
         
     }
 
-    
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("obstacle") || other.transform.CompareTag("ground"))
+        if (other.transform.CompareTag("obstacle"))
         {
             print("자동차가 충돌했습니다");
             crashCount++;
         }
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.transform.CompareTag("obstacle"))
+    //    {
+    //        print("자동차가 충돌했습니다");
+    //        crashCount++;
+    //    }
+    //}
 }
