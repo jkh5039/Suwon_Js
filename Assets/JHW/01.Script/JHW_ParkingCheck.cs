@@ -15,6 +15,8 @@ public class JHW_ParkingCheck : MonoBehaviour
     public GameObject m_BR;
 
     public bool AllChecked;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,4 +48,5 @@ public class JHW_ParkingCheck : MonoBehaviour
         if (other.gameObject == m_BL) c_BL.color = Color.white; AllChecked = false;
         if (other.gameObject == m_BR) c_BR.color = Color.white; AllChecked = false;
     }
+
 }

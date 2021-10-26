@@ -8,7 +8,7 @@ public class JHW_WheelCollider : MonoBehaviour
     public float maxMotorTorque; // maximum torque the motor can apply to wheel         //모델 별로 차별화 하기
     public float maxSteeringAngle; // maximum steer angle the wheel can have
 
-    JHW_JoyStick joystick;
+    public JHW_JoyStick joystick;
 
     public float wheelspeed;
     public float acceleration;
@@ -20,7 +20,7 @@ public class JHW_WheelCollider : MonoBehaviour
 
     private void Start()
     {
-       joystick = GameObject.Find("SportsVehicleWhite").GetComponent<JHW_JoyStick>();
+       //joystick = GameObject.Find("Player").GetComponent<JHW_JoyStick>();
         acceleration = 0;
         car = GetComponent<Rigidbody>();
     }

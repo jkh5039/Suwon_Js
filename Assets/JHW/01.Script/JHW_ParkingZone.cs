@@ -13,7 +13,7 @@ public class JHW_ParkingZone : MonoBehaviour
 
     bool issuccess = false;
 
-    JHW_Car car;
+    public JHW_Car carCollider;
     JHW_ParkingCheck pc;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class JHW_ParkingZone : MonoBehaviour
         ParkingPoint = GameObject.Find("ParkingPoint");
         ParkingZonePoint = GameObject.Find("ParkingZonePoint");
        
-        car = GameObject.Find("VehicleCollider").GetComponent<JHW_Car>();
+        //car = GameObject.Find("VehicleCollider").GetComponent<JHW_Car>();
         pc = GameObject.Find("ParkingZone").GetComponent<JHW_ParkingCheck>();
     }
 
@@ -33,10 +33,13 @@ public class JHW_ParkingZone : MonoBehaviour
         {
             if (issuccess == false)
             {
+
+
+
                 print("½ºÅ×ÀÌÁö ¼º°ø");
                 Time.timeScale = 0;
                 clearText.gameObject.SetActive(true);
-                crashText.text = "ºÎµúÈù È½¼ö : " + car.crashCount;
+                crashText.text = "ºÎµúÈù È½¼ö : " + carCollider.crashCount;
                 crashText.gameObject.SetActive(true);
             }
 
