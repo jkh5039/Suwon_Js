@@ -1201,7 +1201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 298197161}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 308864085}
+        m_TargetAssemblyTypeName: KH_UIManager, Assembly-CSharp
+        m_MethodName: onClickExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &298197161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,7 +1841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &635161620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3023,6 +3035,7 @@ MonoBehaviour:
   ground: {fileID: 292223436}
   camRotae: {fileID: 1257458310}
   isPark: 0
+  isIndicator: 0
 --- !u!114 &1241517285
 MonoBehaviour:
   m_ObjectHideFlags: 0

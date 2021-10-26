@@ -5,7 +5,7 @@ using UnityEngine.XR.ARFoundation;
 public class ARManager : MonoBehaviour
     
 {
-    public static ARManager instance;
+    
 
     public GameObject indicator; //indicator
     public GameObject carFactory; //자동차공장
@@ -14,6 +14,10 @@ public class ARManager : MonoBehaviour
     public GameObject ground;
     public CamRotate camRotae;
     public bool isPark;
+    public bool isIndicator;
+
+
+    public static ARManager instance;
 
     private void Awake()
     {
@@ -29,7 +33,7 @@ public class ARManager : MonoBehaviour
     void Start()
     {
         isPark = true;
-
+        isIndicator = true;
         arRayManager = GetComponent<ARRaycastManager>();
 
         //만약 ar을 사용한다면
@@ -49,7 +53,7 @@ public class ARManager : MonoBehaviour
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         //만약에 ray를 발사해서 부딪힌 곳이 있다면
 
-        if (useAR)
+        if (useAR && isIndicator==true)
         {
             List<ARRaycastHit> hits = new List<ARRaycastHit>();
             if (arRayManager.Raycast(ray, hits))
@@ -62,19 +66,19 @@ public class ARManager : MonoBehaviour
             }
         }
 
-        else
-        {
-            RaycastHit hit; //PC전용
-            if (Physics.Raycast(ray, out hit))
-            {
-                SetIndicator(hit.point);
-            }
-            //그렇지 않으면 indacator 비활성화한다
-            else
-            {
-                indicator.SetActive(false);
-            }
-        }
+        //else
+        //{
+        //    RaycastHit hit; //PC전용
+        //    if (Physics.Raycast(ray, out hit))
+        //    {
+        //        SetIndicator(hit.point);
+        //    }
+        //    //그렇지 않으면 indacator 비활성화한다
+        //    else
+        //    {
+        //        indicator.SetActive(false);
+        //    }
+        //}
 
 
 
@@ -92,8 +96,13 @@ public class ARManager : MonoBehaviour
             car.transform.forward = indicator.transform.forward;
             isPark = false;
 
-
+            if (car.activeSelf)
+            {
+                isIndicator = false;
+                indicator.SetActive(false);
+            }
         }
+        
     }
     void SetIndicator(Vector3 pos)
     {

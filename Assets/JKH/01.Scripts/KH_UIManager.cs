@@ -42,7 +42,12 @@ public class KH_UIManager : MonoBehaviour
         //인식하고 알림 뜨면 요거 뜨게한다...
         carSpec.SetActive(true);
     }
-    
+    public void onClickExit()
+    {
+        carSpec.SetActive(false);
+        //bool 안되던것들 true 시킨다.
+
+    }
     public void OnClickAudiDetails()
     {
         //버튼 누르면 세부사항 켜진다

@@ -27,6 +27,7 @@ public class MultiImage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isNotice = true;
         trackedMgr = GetComponent<ARTrackedImageManager>();
         //인식된 이미지 정보들이 변경되면 호출해주는 함수 등록.
         trackedMgr.trackedImagesChanged += OnTrackedImagesChanged;
@@ -44,11 +45,13 @@ public class MultiImage : MonoBehaviour
                 if (trackedImage.referenceImage.name == markerInfos[j].name)
                 {
                     //만약에 이미지를 트래킹(인식) 하고 있다면,
-                    if (trackedImage.trackingState == TrackingState.Tracking)
+                    if (trackedImage.trackingState == TrackingState.Tracking&& isNotice==true)
                     {
                         
                         
                         notice.SetActive(true);
+                        //notice가 뜨면 indicator 안뜨게 한다
+                        ARManager.instance.isIndicator = false;
                         noticeCarName.text =
                                 carName + "차가 인식되었습니다." + "\n"
                                 + carName + "차에 대한 정보를 확인 하시겠습니까?";
@@ -92,6 +95,7 @@ public class MultiImage : MonoBehaviour
         //그 해당 자동차의 UI를 보여준다
         KH_UIManager.instance.OnAudi();
         notice.SetActive(false);
+        isNotice = false;
         //여기다가?
     }
 
