@@ -60,8 +60,13 @@ public class MultiImage : MonoBehaviour
 
                             //텍스트 변경
                             carName = "Audi";
-                            //만약 CarName 여러개해서 변수 넣는다
                             
+                            
+                        }
+                        else if(markerInfos[j].name=="  ")
+                        {
+                            carName = "  "; // carName 변수 입력
+                            //
                         }
 
 

@@ -45,7 +45,7 @@ public class KH_UIManager : MonoBehaviour
     public void onClickExit()
     {
         carSpec.SetActive(false);
-        //bool 안되던것들 true 시킨다.
+        //bool 안되던것들 true 시킨다. 임시방편으로 한번만 되게함!
 
     }
     public void OnClickAudiDetails()
