@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class JHW_ParkingZone : MonoBehaviour
 {
     public float successDistance;
+    public float car_parkingDistance;
     GameObject ParkingPoint;
     GameObject ParkingZonePoint;
     public Text clearText;
     public Text crashText;
+    public Text indicator;
 
     bool issuccess = false;
 
@@ -29,7 +31,10 @@ public class JHW_ParkingZone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (successDistance >= Vector3.Distance(ParkingPoint.transform.position, ParkingZonePoint.transform.position) && pc.AllChecked==true)
+        car_parkingDistance = Vector3.Distance(ParkingPoint.transform.position, ParkingZonePoint.transform.position);
+        indicator.text = "목표 지점과의\n거리 : " + car_parkingDistance.ToString("F2") + "M";
+
+        if (successDistance >= car_parkingDistance && pc.AllChecked==true)
         {
             if (issuccess == false)
             {

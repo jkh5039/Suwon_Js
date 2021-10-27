@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JHW_Car : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class JHW_Car : MonoBehaviour
     public bool isCP3;
     public int laps;
 
+    public Text laps_text;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +30,7 @@ public class JHW_Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        laps_text.text = "Laps " + laps + " / 3";
     }
 
 
