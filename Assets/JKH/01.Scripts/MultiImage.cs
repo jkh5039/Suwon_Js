@@ -5,12 +5,14 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.UI;
 
+
 //이미지 이름, 해당 이미지가 인식되었을떄 나타나는 오브젝트
 [System.Serializable]
 public struct MarkerInfo
 {
     public string name;
     public GameObject obj;
+    public Sprite LogoImg;
 }
 public class MultiImage : MonoBehaviour
 {
@@ -23,6 +25,18 @@ public class MultiImage : MonoBehaviour
     public Text noticeCarName;
     string carName;
     public bool isNotice;
+
+    //canvasInfo's informations
+    public Text brandName;
+    public Text Price;
+    public Text GasMileage;
+    public Text maxSpeed;
+    public Text Fuel;
+    public Text Appearance;
+    public Image brandLogo1;
+    public Image brandLogo2;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -47,28 +61,44 @@ public class MultiImage : MonoBehaviour
                     //만약에 이미지를 트래킹(인식) 하고 있다면,
                     if (trackedImage.trackingState == TrackingState.Tracking&& isNotice==true)
                     {
-                        
-                        
-                        notice.SetActive(true);
-                        //notice가 뜨면 indicator 안뜨게 한다
-                        ARManager.instance.isIndicator = false;
+
                         noticeCarName.text =
                                 carName + "차가 인식되었습니다." + "\n"
                                 + carName + "차에 대한 정보를 확인 하시겠습니까?";
+                        notice.SetActive(true);
+                        //notice가 뜨면 indicator 안뜨게 한다
+                        ARManager.instance.isIndicator = false;
+                        
+
                         if (markerInfos[j].name == "Audi")
                         {
-
-                            //텍스트 변경
                             carName = "Audi";
-                            
-                            
+                            brandLogo1.sprite = markerInfos[j].LogoImg;
+                            brandLogo2.sprite = markerInfos[j].LogoImg;
+                            //텍스트 변경
+
+
+                            //자동차별 들어가야 할 내용
+                            brandName.text = "차 이름";
+                            Price.text = "가격";
+                            GasMileage.text = "연비";
+                            maxSpeed.text = "최고속력";
+                            Fuel.text = "연료";
+                            Appearance.text = "차 종류";
+
+
+
+                            //상세내용은 그냥 따로 만든다....
+
+
                         }
-                        else if(markerInfos[j].name=="  ")
+                        else if (markerInfos[j].name == "  ")
                         {
                             carName = "  "; // carName 변수 입력
                             //
                         }
 
+                        
 
                     }
                     //그렇지않고(만약 벗어났다면)
