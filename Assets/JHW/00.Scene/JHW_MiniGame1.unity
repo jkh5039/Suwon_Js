@@ -420,5 +420,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParkingGame
       objectReference: {fileID: 0}
+    - target: {fileID: 9210904331692314327, guid: 43a220dd9d53a3343b036927d0ef69a8, type: 3}
+      propertyPath: maxMotorTorque
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43a220dd9d53a3343b036927d0ef69a8, type: 3}

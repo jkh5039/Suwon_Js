@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class JHW_WheelCollider : MonoBehaviour
 {
     public List<AxleInfo> axleInfos; // the information about each individual axle
@@ -27,10 +28,22 @@ public class JHW_WheelCollider : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (transform.root.name == "ParkingGame")
+        {
+            maxMotorTorque = 10;
+        }
+        if(transform.root.name=="RaceGame")
+        {
+            maxMotorTorque = 40;
+        }
         // 방향, 구동
         float motor = maxMotorTorque * acceleration;
-       // float steering = maxSteeringAngle * Input.GetAxis("Horizontal")*wheelspeed; //pc
+        
+     
         float steering = joystick.direction.x * wheelspeed; //모바일
+
+
+        //float steering = maxSteeringAngle * Input.GetAxis("Horizontal")*wheelspeed; //pc
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
