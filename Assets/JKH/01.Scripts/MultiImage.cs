@@ -35,7 +35,7 @@ public class MultiImage : MonoBehaviour
     public Text Fuel;
     public Text Appearance;
     public Image brandLogo1;
-    public Image brandLogo2;
+    //public Image brandLogo2;
 
     public static MultiImage instance;
 
@@ -77,8 +77,8 @@ public class MultiImage : MonoBehaviour
                     {
 
                         noticeCarName.text =
-                                carName + "차가 인식되었습니다." + "\n"
-                                + carName + "차에 대한 정보를 확인 하시겠습니까?";
+                                carName + "was recognized." + "\n"
+                                + carName + "Do you want to confirm?";
                         notice.SetActive(true);
                         //notice가 뜨면 indicator 안뜨게 한다
                         ARManager.instance.isIndicator = false;
@@ -90,7 +90,7 @@ public class MultiImage : MonoBehaviour
                             carName = "Audi";
                             //로고 사진 설정
                             brandLogo1.sprite = markerInfos[j].LogoImg;
-                            brandLogo2.sprite = markerInfos[j].LogoImg;
+                            
                             
 
                             //자동차별 들어가야 할 내용
@@ -113,7 +113,7 @@ public class MultiImage : MonoBehaviour
                             carName = "어떤 차 이름";
                             //로고 사진 설정
                             brandLogo1.sprite = markerInfos[j].LogoImg;
-                            brandLogo2.sprite = markerInfos[j].LogoImg;
+                            
 
 
                             //자동차별 들어가야 할 내용
