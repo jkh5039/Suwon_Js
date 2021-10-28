@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 
 //이미지 이름, 해당 이미지가 인식되었을떄 나타나는 오브젝트
+//structure
 [System.Serializable]
 public struct MarkerInfo
 {
@@ -36,7 +37,20 @@ public class MultiImage : MonoBehaviour
     public Image brandLogo1;
     public Image brandLogo2;
 
-    
+    public static MultiImage instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -72,33 +86,46 @@ public class MultiImage : MonoBehaviour
 
                         if (markerInfos[j].name == "Audi")
                         {
+                            //OX에 뜰 차이름
                             carName = "Audi";
+                            //로고 사진 설정
                             brandLogo1.sprite = markerInfos[j].LogoImg;
                             brandLogo2.sprite = markerInfos[j].LogoImg;
-                            //텍스트 변경
+                            
+
+                            //자동차별 들어가야 할 내용
+                            brandName.text = "2021 Audi A6"; //2021 Audi A6
+                            Price.text = "74,000$"; //74,000$
+                            GasMileage.text = "11.8km/ℓ"; //11.8km/ℓ
+                            maxSpeed.text = "210km/h"; //210km/h
+                            Fuel.text = "gasoline, diesel"; //gasoline, diesel
+                            Appearance.text = "sedan"; //sedan
+
+
+
+                            //상세내용은 그냥 따로 만든다....하나하나 일일이
+
+
+                        }
+                        else if (markerInfos[j].name == "G80") //복사한다
+                        {
+                            //OX에 뜰 차이름
+                            carName = "어떤 차 이름";
+                            //로고 사진 설정
+                            brandLogo1.sprite = markerInfos[j].LogoImg;
+                            brandLogo2.sprite = markerInfos[j].LogoImg;
 
 
                             //자동차별 들어가야 할 내용
-                            brandName.text = "차 이름";
-                            Price.text = "가격";
-                            GasMileage.text = "연비";
-                            maxSpeed.text = "최고속력";
-                            Fuel.text = "연료";
-                            Appearance.text = "차 종류";
-
-
-
-                            //상세내용은 그냥 따로 만든다....
-
-
-                        }
-                        else if (markerInfos[j].name == "  ")
-                        {
-                            carName = "  "; // carName 변수 입력
-                            //
+                            brandName.text = "차 이름"; //2021 Audi A6
+                            Price.text = "가격"; //74,000$
+                            GasMileage.text = "연비"; //11.8km/ℓ
+                            maxSpeed.text = "최고속력"; //210km/h
+                            Fuel.text = "연료"; //gasoline, diesel
+                            Appearance.text = "차 종류"; //sedan
                         }
 
-                        
+                        //상세내용은 빈obj 추가
 
                     }
                     //그렇지않고(만약 벗어났다면)

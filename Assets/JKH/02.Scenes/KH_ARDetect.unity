@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3074,12 +3074,12 @@ MonoBehaviour:
   notice: {fileID: 635161619}
   noticeCarName: {fileID: 1980384728}
   isNotice: 0
-  brandName: {fileID: 0}
-  Price: {fileID: 0}
-  GasMileage: {fileID: 0}
-  maxSpeed: {fileID: 0}
-  Fuel: {fileID: 0}
-  Appearance: {fileID: 0}
+  brandName: {fileID: 2076259077}
+  Price: {fileID: 279339972}
+  GasMileage: {fileID: 1409871259}
+  maxSpeed: {fileID: 1397294094}
+  Fuel: {fileID: 1578257655}
+  Appearance: {fileID: 293490681}
   brandLogo1: {fileID: 226485803}
   brandLogo2: {fileID: 1851258188}
 --- !u!1 &1257458304
