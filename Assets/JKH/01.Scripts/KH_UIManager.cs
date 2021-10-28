@@ -63,7 +63,11 @@ public class KH_UIManager : MonoBehaviour
     public void OnClickParking()
     {
         //버튼누르면 씬 전환
-        SceneManager.LoadScene("JHW_MiniGame1");
+        //SceneManager.LoadScene("JHW_MiniGame1");
+    }
+    public void OnClickDriving()
+    {
+
     }
 
     public void onClickConfirmO()
