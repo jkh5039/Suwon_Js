@@ -30,20 +30,21 @@ public class JHW_Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        laps_text.text = "Laps " + laps + " / 3";
+
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
+        
 
-        if (other.transform.CompareTag("obstacle"))
+        if (other.transform.CompareTag("obstacle") && transform.root.name == "ParkingGame")
         {
             print("자동차가 충돌했습니다 : " + crashCount);
             crashCount++;
         }
-
-        if (other.transform==startFinishLine.transform)
+        //----------------------------------------------------------
+        if (other.transform==startFinishLine.transform && transform.root.name == "RaceGame")
         {
             if(isCP1==true && isCP2==true && isCP3==true)
             {
@@ -54,7 +55,8 @@ public class JHW_Car : MonoBehaviour
                 isCP3 = false;
             }
             print("피니시라인 통과 Lap : " + laps) ;
-            
+            laps_text.text = "Laps " + laps + " / 3";
+
         }
         if(other.transform==checkPoint_1.transform)
         {

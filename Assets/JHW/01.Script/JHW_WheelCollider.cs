@@ -23,7 +23,7 @@ public class JHW_WheelCollider : MonoBehaviour
     {
        //joystick = GameObject.Find("Player").GetComponent<JHW_JoyStick>();
         acceleration = 0;
-        car = GetComponent<Rigidbody>();
+        //car = GetComponent<Rigidbody>();
     }
 
     public void FixedUpdate()
@@ -38,12 +38,11 @@ public class JHW_WheelCollider : MonoBehaviour
         }
         // 방향, 구동
         float motor = maxMotorTorque * acceleration;
-        
-     
-        float steering = joystick.direction.x * wheelspeed; //모바일
 
+        float steering = maxSteeringAngle* joystick.direction.x * wheelspeed; //모바일 버전 조이스틱
+        //float steering = Input.acceleration.x; //모바일 버전 틸트
 
-        //float steering = maxSteeringAngle * Input.GetAxis("Horizontal")*wheelspeed; //pc
+        //float steering = maxSteeringAngle * Input.GetAxis("Horizontal")*wheelspeed; // pc 버전
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -59,6 +58,7 @@ public class JHW_WheelCollider : MonoBehaviour
             }
         }
         
+        //버튼 불함수
         if (isaccel == true)
         {
             acceleration += 0.1f;
@@ -73,7 +73,7 @@ public class JHW_WheelCollider : MonoBehaviour
         {
             acceleration = 0;
         }
-        
+
     }
     
     public void AccelBtnDown()

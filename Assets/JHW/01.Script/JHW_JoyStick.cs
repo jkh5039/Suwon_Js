@@ -12,7 +12,8 @@ public class JHW_JoyStick : MonoBehaviour
 
     public void FixedUpdate()
     {
-        direction = /* Vector3.forward * fixedJoystick.Vertical +*/ Vector3.right * fixedJoystick.Horizontal;
+        direction = /* Vector3.forward * fixedJoystick.Vertical + */ 
+            Vector3.right * fixedJoystick.Horizontal;
 
 
         //rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);

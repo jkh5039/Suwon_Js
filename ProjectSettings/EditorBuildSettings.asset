@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/JKH/02.Scenes/KH_ARDetect.unity
-    guid: a2a7e5afafe31b744bf05a1aea95c712
-  - enabled: 1
-    path: Assets/JHW/00.Scene/JHW_MiniGame1.unity
-    guid: a52137e127b94a04babb4f09b25aea55
+    path: Assets/JHW/00.Scene/JHW_MiniGame2.unity
+    guid: 4b95c8d33aba1d74f886cc9b55e44a76
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: ca4b6dd7868db364b84700e3c14c8b33, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 51609e2ed6433404f8baf438f58d02bc, type: 2}
