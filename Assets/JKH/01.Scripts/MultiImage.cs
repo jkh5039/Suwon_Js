@@ -24,7 +24,7 @@ public class MultiImage : MonoBehaviour
     //Notice UI
     public GameObject notice;
     public Text noticeCarName;
-    string carName;
+    public string carName; //원래 스트링
     public bool isNotice;
 
     //canvasInfo's informations
@@ -173,7 +173,7 @@ public class MultiImage : MonoBehaviour
     public void OnClickNotice_O()
     {
         //그 해당 자동차의 UI를 보여준다
-        KH_UIManager.instance.OnAudi();
+        KH_UIManager.instance.OnCarSpec();
         notice.SetActive(false);
         isNotice = false;
         //여기다가?

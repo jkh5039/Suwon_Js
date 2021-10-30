@@ -23,7 +23,9 @@ public class KH_UIManager : MonoBehaviour
     //자동차 스펙 메뉴
     public GameObject carSpec;
     //자동차 세부사항
-    public GameObject details;
+    public GameObject detailsAudi;
+    public GameObject detailsBenz;
+    public GameObject detailsGenesis;
     //진짜 나가게?
     public GameObject confirm;
     // Start is called before the first frame update
@@ -39,7 +41,7 @@ public class KH_UIManager : MonoBehaviour
         
     }
 
-    public void OnAudi()
+    public void OnCarSpec()
     {
         //인식하고 알림 뜨면 요거 뜨게한다...
         carSpec.SetActive(true);
@@ -51,20 +53,27 @@ public class KH_UIManager : MonoBehaviour
         //컨펌으로 가져감@
 
     }
-    public void OnClickAudiDetails()
+
+    
+
+    //2개 나머지도 이렇게 반복
+    public void OnClickDetails()
     {
+        //상황 3가지에 따른 
+
+        //만약 아우디가 켜졌으면
+        //if(MultiImage.instan)
+        //아우디 실행하고
+        
+
         //버튼 누르면 세부사항 켜진다
-        details.SetActive(true);
+        detailsAudi.SetActive(true);
     }
-    public void onClickAudiDetailsBack()
+    public void onClickDetailsBack()
     {
-        details.SetActive(false);
+        detailsAudi.SetActive(false);
     }
-    public void OnClickParking()
-    {
-        //버튼누르면 씬 전환
-        //SceneManager.LoadScene("JHW_MiniGame1");
-    }
+    
     
 
     public void onClickConfirmO()
@@ -73,7 +82,7 @@ public class KH_UIManager : MonoBehaviour
         confirm.SetActive(false);
         carSpec.SetActive(false);
         MultiImage.instance.isNotice = true;
-        ARManager.instance.isIndicator = true;
+        //ARManager.instance.isIndicator = true;
         
         //bool 안되던것들 true 시킨다. 임시방편으로 한번만 되게함! //고침---- 여기까지
     }
