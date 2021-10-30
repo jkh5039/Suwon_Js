@@ -65,23 +65,43 @@ public class KH_UIManager : MonoBehaviour
         //버튼누르면 씬 전환
         //SceneManager.LoadScene("JHW_MiniGame1");
     }
-    public void OnClickDriving()
-    {
-
-    }
+    
 
     public void onClickConfirmO()
     {
-        //-----
+        //-----정보 확인하고 끌때 생겨나는 창
         confirm.SetActive(false);
         carSpec.SetActive(false);
         MultiImage.instance.isNotice = true;
         ARManager.instance.isIndicator = true;
-        ARManager.instance.isIndicator = true;
+        
         //bool 안되던것들 true 시킨다. 임시방편으로 한번만 되게함! //고침---- 여기까지
     }
     public void onClickConfirmX()
     {
         confirm.SetActive(false);
+    }
+
+    //NEW Btn@@@@
+    public void onClickDrive()
+    {
+        SceneManager.LoadScene("JHW_MiniGame2");
+    }
+
+    public void onClickParkAndRecognition()
+    {
+        SceneManager.LoadScene("KH_ARDetect");
+        MultiImage.instance.isNotice = true;
+        //indicator 지금은 비활성화, parking 누를떄 활성화 한다.
+        ARManager.instance.isIndicator = false;
+        
+    }
+    public void onClickParking()
+    {
+        //화면 꺼지고 AR 상태로 간다
+        //isNotice 안켜지게하고
+        MultiImage.instance.isNotice = false;
+        //indicator 활성화
+        ARManager.instance.isIndicator = true;
     }
 }

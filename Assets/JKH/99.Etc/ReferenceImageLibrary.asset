@@ -33,7 +33,7 @@ MonoBehaviour:
       m_GuidHigh: 11333393688490825545
     m_Size: {x: 1, y: 0.54178274}
     m_SpecifySize: 1
-    m_Name: G80
+    m_Name: Benz
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4656791335730456971
@@ -43,5 +43,5 @@ MonoBehaviour:
       m_GuidHigh: 10521643326339058827
     m_Size: {x: 1, y: 0.6546875}
     m_SpecifySize: 1
-    m_Name: malibu
+    m_Name: Genesis
     m_Texture: {fileID: 0}

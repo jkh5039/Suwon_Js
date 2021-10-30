@@ -77,7 +77,7 @@ public class MultiImage : MonoBehaviour
                     {
 
                         noticeCarName.text =
-                                carName + "was recognized." + "\n"
+                                carName + " was recognized." + "\n"
                                 + carName + "Do you want to confirm?";
                         notice.SetActive(true);
                         //notice가 뜨면 indicator 안뜨게 한다
@@ -107,22 +107,40 @@ public class MultiImage : MonoBehaviour
 
 
                         }
-                        else if (markerInfos[j].name == "G80") //복사한다
+                        else if (markerInfos[j].name == "Benz") //복사한다
                         {
                             //OX에 뜰 차이름
-                            carName = "어떤 차 이름";
+                            carName = "Benz";
                             //로고 사진 설정
                             brandLogo1.sprite = markerInfos[j].LogoImg;
                             
 
 
                             //자동차별 들어가야 할 내용
-                            brandName.text = "차 이름"; //2021 Audi A6
-                            Price.text = "가격"; //74,000$
-                            GasMileage.text = "연비"; //11.8km/ℓ
-                            maxSpeed.text = "최고속력"; //210km/h
-                            Fuel.text = "연료"; //gasoline, diesel
-                            Appearance.text = "차 종류"; //sedan
+                            brandName.text = "Mercedes-Benz S-350d"; //2021 Audi A6
+                            Price.text = "120,000$"; //74,000$
+                            GasMileage.text = "12.0 km/ℓ"; //11.8km/ℓ
+                            maxSpeed.text = "250km/h"; //210km/h
+                            Fuel.text = "diesel"; //gasoline, diesel
+                            Appearance.text = "sedan"; //sedan
+                        }
+
+                        else if (markerInfos[j].name == "Genesis") //복사한다
+                        {
+                            //OX에 뜰 차이름
+                            carName = "Genesis";
+                            //로고 사진 설정
+                            brandLogo1.sprite = markerInfos[j].LogoImg;
+
+
+
+                            //자동차별 들어가야 할 내용
+                            brandName.text = "Genesis G70"; //2021 Audi A6
+                            Price.text = "34,000$"; //74,000$
+                            GasMileage.text = "10.7 km/ℓ"; //11.8km/ℓ
+                            maxSpeed.text = "200km/h"; //210km/h
+                            Fuel.text = "gasoline"; //gasoline, diesel
+                            Appearance.text = "sedan"; //sedan
                         }
 
                         //상세내용은 빈obj 추가

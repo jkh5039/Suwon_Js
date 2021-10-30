@@ -13,7 +13,7 @@ public class ARManager : MonoBehaviour
     public bool useAR;
     public GameObject ground;
     public CamRotate camRotae;
-    public bool isPark;
+    public bool isPark; //여러개 생성되는거 방지하기 위한.
     public bool isIndicator;
 
 
