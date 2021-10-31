@@ -32,15 +32,12 @@ public class JHW_ParkingZone : MonoBehaviour
     void Update()
     {
         car_parkingDistance = Vector3.Distance(ParkingPoint.transform.position, ParkingZonePoint.transform.position);
-        indicator.text = "목표 지점과의\n거리 : " + car_parkingDistance.ToString("F2") + "M";
+        indicator.text = "목표 지점과의\n거리 : " + (car_parkingDistance*10f).ToString("F2") + "M";
 
         if (successDistance >= car_parkingDistance && pc.AllChecked==true)
         {
             if (issuccess == false)
             {
-
-
-
                 print("스테이지 성공");
                 Time.timeScale = 0;
                 clearText.gameObject.SetActive(true);

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class JHW_WheelCollider : MonoBehaviour
 {
@@ -28,7 +28,7 @@ public class JHW_WheelCollider : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (transform.root.name == "ParkingGame")
+        if (SceneManager.GetActiveScene().name== "KH_ARDetect")
         {
             maxMotorTorque = 10;
         }

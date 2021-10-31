@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;  
 
 public class JHW_Car : MonoBehaviour
 {
@@ -23,14 +24,14 @@ public class JHW_Car : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        crashCount=0;
+        crashCount = 0;
         laps = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        laps_text.text = "Laps " + laps + " / 3";
     }
 
 
@@ -38,7 +39,7 @@ public class JHW_Car : MonoBehaviour
     {
         
 
-        if (other.transform.CompareTag("obstacle") && transform.root.name == "ParkingGame")
+        if (other.transform.CompareTag("obstacle")  && SceneManager.GetActiveScene().name == "KH_ARDetect")
         {
             print("자동차가 충돌했습니다 : " + crashCount);
             crashCount++;
@@ -55,7 +56,7 @@ public class JHW_Car : MonoBehaviour
                 isCP3 = false;
             }
             print("피니시라인 통과 Lap : " + laps) ;
-            laps_text.text = "Laps " + laps + " / 3";
+            //laps_text.text = "Laps " + laps + " / 3";
 
         }
         if(other.transform==checkPoint_1.transform)
@@ -74,6 +75,12 @@ public class JHW_Car : MonoBehaviour
             isCP3 = true;
         }
     }
+
+    public void OnClickCheatKey()
+    {
+        laps++;
+    }
+
     //private void OnCollisionEnter(Collision collision)
     //{
     //    if (collision.transform.CompareTag("obstacle"))
