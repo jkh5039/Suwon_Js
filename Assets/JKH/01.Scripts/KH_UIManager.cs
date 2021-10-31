@@ -28,6 +28,9 @@ public class KH_UIManager : MonoBehaviour
     public GameObject detailsGenesis;
     //진짜 나가게?
     public GameObject confirm;
+    //ParkingMode 일때만 실행
+    public GameObject parkUI;
+    public GameObject parkExitNotice;
     // Start is called before the first frame update
     void Start()
     {
@@ -133,11 +136,10 @@ public class KH_UIManager : MonoBehaviour
     }
     public void onClickParking()
     {
-        //이전에 확인 UI이미지 하나 띄워두댐
-        //좌하단에나 어딘가에 메뉴 가기 버튼 하나 누른다.
+        
         //화면 꺼지고 AR 상태로 간다
         carSpec.SetActive(false);
-        
+        parkUI.SetActive(true);
         //누를때 isPark 실행시킨다
         ARManager.instance.isPark = true;
         //isNotice 안켜지게하고
@@ -149,15 +151,25 @@ public class KH_UIManager : MonoBehaviour
         
     }
 
-    public void onClickParkingExit()
+    public void onClickParkingX()
     {
-        //나가기 버튼만든다 
-        //누르면 메인화면으로   Bool값 수정해준다
+        parkExitNotice.SetActive(true);
+    }
+    
+    public void onClickParkingNoticeO()
+    {
+        parkUI.SetActive(false);
         //누를때 isPark 실행시킨다 (일단 무지성으로 적음)
-        ARManager.instance.isPark = false;
+        ARManager.instance.isPark = true;
         //isNotice 안켜지게하고
         MultiImage.instance.isNotice = false;
         //indicator 활성화
         ARManager.instance.isIndicator = false;
+        //메인화면으로
+        SceneManager.LoadScene("KH_Menu");
+    }
+    public void onClickParkingNoticeX()
+    {
+        parkExitNotice.SetActive(false);
     }
 }
