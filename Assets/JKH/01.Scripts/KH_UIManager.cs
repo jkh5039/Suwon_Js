@@ -111,6 +111,8 @@ public class KH_UIManager : MonoBehaviour
         MultiImage.instance.isBenz = false;
         MultiImage.instance.isGenesis = false;
 
+        SceneManager.LoadScene("KH_Menu");
+
         //ARManager.instance.isIndicator = true;
 
         //bool 안되던것들 true 시킨다. 임시방편으로 한번만 되게함! //고침---- 여기까지
@@ -154,6 +156,7 @@ public class KH_UIManager : MonoBehaviour
     public void onClickParkingX()
     {
         parkExitNotice.SetActive(true);
+        ARManager.instance.isIndicator = false;
     }
     
     public void onClickParkingNoticeO()
@@ -171,5 +174,6 @@ public class KH_UIManager : MonoBehaviour
     public void onClickParkingNoticeX()
     {
         parkExitNotice.SetActive(false);
+        ARManager.instance.isIndicator = true;
     }
 }

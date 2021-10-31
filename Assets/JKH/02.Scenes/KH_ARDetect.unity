@@ -5062,7 +5062,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 308864085}
         m_TargetAssemblyTypeName: KH_UIManager, Assembly-CSharp
-        m_MethodName: onClickAudiDetailsBack
+        m_MethodName: onClickDetailsBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6533,7 +6533,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 308864085}
         m_TargetAssemblyTypeName: KH_UIManager, Assembly-CSharp
-        m_MethodName: onClickAudiDetailsBack
+        m_MethodName: onClickDetailsBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

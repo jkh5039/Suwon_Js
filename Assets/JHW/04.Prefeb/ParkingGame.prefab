@@ -5438,8 +5438,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSpec: {fileID: 0}
-  details: {fileID: 0}
+  detailsAudi: {fileID: 0}
+  detailsBenz: {fileID: 0}
+  detailsGenesis: {fileID: 0}
   confirm: {fileID: 0}
+  parkUI: {fileID: 0}
+  parkExitNotice: {fileID: 0}
 --- !u!1 &7962426282471094049
 GameObject:
   m_ObjectHideFlags: 0
