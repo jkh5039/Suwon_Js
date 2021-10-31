@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
+
+
+
 public class ARManager : MonoBehaviour
     
 {
-    
+    //차 종류들
+    public GameObject carColor;
+    public GameObject[] carColors;
 
     public GameObject indicator; //indicator
     public GameObject carFactory; //자동차공장
@@ -88,6 +93,10 @@ public class ARManager : MonoBehaviour
         //만약에 indicator가 활성화 상태라면
         if (Input.GetButtonDown("Fire1") && indicator.activeSelf && isPark) //addBool
         {
+            //추가할내용
+            //carColor = carColors[0];
+
+
             //자동차 공장에서 자동차 생성 //맵 생성
             GameObject car = Instantiate(carFactory);
             //생성된 자동차를 indicator위치에 놓는다

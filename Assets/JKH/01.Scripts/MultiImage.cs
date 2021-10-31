@@ -15,10 +15,16 @@ public struct MarkerInfo
     public GameObject obj;
     public Sprite LogoImg;
 }
+
+
 public class MultiImage : MonoBehaviour
 {
     //마커의 정보들
     public MarkerInfo[] markerInfos;
+
+    
+     
+
     //ARTrackedImageManager
     ARTrackedImageManager trackedMgr;
     //Notice UI
