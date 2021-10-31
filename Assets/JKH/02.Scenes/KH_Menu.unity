@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 1551257614}
   - component: {fileID: 1551257613}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: MenuImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -865,7 +865,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSpec: {fileID: 0}
-  details: {fileID: 0}
+  detailsAudi: {fileID: 0}
+  detailsBenz: {fileID: 0}
+  detailsGenesis: {fileID: 0}
   confirm: {fileID: 0}
 --- !u!1 &2113236319
 GameObject:

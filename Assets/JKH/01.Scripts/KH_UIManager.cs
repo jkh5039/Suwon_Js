@@ -60,18 +60,38 @@ public class KH_UIManager : MonoBehaviour
     public void OnClickDetails()
     {
         //상황 3가지에 따른 
+        if (MultiImage.instance.isAudi)
+        {
+            //버튼 누르면 세부사항 켜진다
+            detailsAudi.SetActive(true);
+        }
+        else if (MultiImage.instance.isBenz)
+        {
+            detailsBenz.SetActive(true);
+        }
+        else if (MultiImage.instance.isGenesis)
+        {
+            detailsGenesis.SetActive(true);
+        }
 
-        //만약 아우디가 켜졌으면
-        //if(MultiImage.instan)
-        //아우디 실행하고
-        
 
-        //버튼 누르면 세부사항 켜진다
-        detailsAudi.SetActive(true);
     }
     public void onClickDetailsBack()
     {
-        detailsAudi.SetActive(false);
+        //상황 3가지에 따른 
+        if (MultiImage.instance.isAudi)
+        {
+            //버튼 누르면 세부사항 켜진다
+            detailsAudi.SetActive(false);
+        }
+        else if (MultiImage.instance.isBenz)
+        {
+            detailsBenz.SetActive(false);
+        }
+        else if (MultiImage.instance.isGenesis)
+        {
+            detailsGenesis.SetActive(false);
+        }
     }
     
     
@@ -82,8 +102,14 @@ public class KH_UIManager : MonoBehaviour
         confirm.SetActive(false);
         carSpec.SetActive(false);
         MultiImage.instance.isNotice = true;
+
+        //겹칠 수도 있으니까 is(차이름) off
+        MultiImage.instance.isAudi = false;
+        MultiImage.instance.isBenz = false;
+        MultiImage.instance.isGenesis = false;
+
         //ARManager.instance.isIndicator = true;
-        
+
         //bool 안되던것들 true 시킨다. 임시방편으로 한번만 되게함! //고침---- 여기까지
     }
     public void onClickConfirmX()
@@ -107,10 +133,31 @@ public class KH_UIManager : MonoBehaviour
     }
     public void onClickParking()
     {
+        //이전에 확인 UI이미지 하나 띄워두댐
+        //좌하단에나 어딘가에 메뉴 가기 버튼 하나 누른다.
         //화면 꺼지고 AR 상태로 간다
+        carSpec.SetActive(false);
+        
+        //누를때 isPark 실행시킨다
+        ARManager.instance.isPark = true;
         //isNotice 안켜지게하고
         MultiImage.instance.isNotice = false;
         //indicator 활성화
         ARManager.instance.isIndicator = true;
+
+        //parkingModeUI 표시한다
+        
+    }
+
+    public void onClickParkingExit()
+    {
+        //나가기 버튼만든다 
+        //누르면 메인화면으로   Bool값 수정해준다
+        //누를때 isPark 실행시킨다 (일단 무지성으로 적음)
+        ARManager.instance.isPark = false;
+        //isNotice 안켜지게하고
+        MultiImage.instance.isNotice = false;
+        //indicator 활성화
+        ARManager.instance.isIndicator = false;
     }
 }

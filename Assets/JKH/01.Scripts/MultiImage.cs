@@ -24,8 +24,11 @@ public class MultiImage : MonoBehaviour
     //Notice UI
     public GameObject notice;
     public Text noticeCarName;
-    public string carName; //원래 스트링
+    public string carName; //원래 public 없었음
     public bool isNotice;
+    public bool isAudi;
+    public bool isBenz;
+    public bool isGenesis;
 
     //canvasInfo's informations
     public Text brandName;
@@ -34,6 +37,7 @@ public class MultiImage : MonoBehaviour
     public Text maxSpeed;
     public Text Fuel;
     public Text Appearance;
+    public Text RidingCapacity;
     public Image brandLogo1;
     //public Image brandLogo2;
 
@@ -78,7 +82,7 @@ public class MultiImage : MonoBehaviour
 
                         noticeCarName.text =
                                 carName + " was recognized." + "\n"
-                                + carName + "Do you want to confirm?";
+                                + "Do you want to confirm?";
                         notice.SetActive(true);
                         //notice가 뜨면 indicator 안뜨게 한다
                         ARManager.instance.isIndicator = false;
@@ -90,7 +94,9 @@ public class MultiImage : MonoBehaviour
                             carName = "Audi";
                             //로고 사진 설정
                             brandLogo1.sprite = markerInfos[j].LogoImg;
-                            
+                            isAudi = true;
+                            isBenz = false;
+                            isGenesis = false;
                             
 
                             //자동차별 들어가야 할 내용
@@ -100,6 +106,7 @@ public class MultiImage : MonoBehaviour
                             maxSpeed.text = "210km/h"; //210km/h
                             Fuel.text = "gasoline, diesel"; //gasoline, diesel
                             Appearance.text = "sedan"; //sedan
+                            RidingCapacity.text = "5 People";
 
 
 
@@ -113,8 +120,10 @@ public class MultiImage : MonoBehaviour
                             carName = "Benz";
                             //로고 사진 설정
                             brandLogo1.sprite = markerInfos[j].LogoImg;
-                            
 
+                            isAudi = false;
+                            isBenz = true;
+                            isGenesis = false;
 
                             //자동차별 들어가야 할 내용
                             brandName.text = "Mercedes-Benz S-350d"; //2021 Audi A6
@@ -123,6 +132,7 @@ public class MultiImage : MonoBehaviour
                             maxSpeed.text = "250km/h"; //210km/h
                             Fuel.text = "diesel"; //gasoline, diesel
                             Appearance.text = "sedan"; //sedan
+                            RidingCapacity.text = "5 People";
                         }
 
                         else if (markerInfos[j].name == "Genesis") //복사한다
@@ -132,7 +142,9 @@ public class MultiImage : MonoBehaviour
                             //로고 사진 설정
                             brandLogo1.sprite = markerInfos[j].LogoImg;
 
-
+                            isAudi = false;
+                            isBenz = false;
+                            isGenesis = true;
 
                             //자동차별 들어가야 할 내용
                             brandName.text = "Genesis G70"; //2021 Audi A6
@@ -141,6 +153,7 @@ public class MultiImage : MonoBehaviour
                             maxSpeed.text = "200km/h"; //210km/h
                             Fuel.text = "gasoline"; //gasoline, diesel
                             Appearance.text = "sedan"; //sedan
+                            RidingCapacity.text = "5 People";
                         }
 
                         //상세내용은 빈obj 추가
