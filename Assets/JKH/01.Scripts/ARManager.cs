@@ -38,7 +38,7 @@ public class ARManager : MonoBehaviour
     void Start()
     {
         isPark = true;
-        isIndicator = true;
+        isIndicator = false;
         arRayManager = GetComponent<ARRaycastManager>();
 
         //만약 ar을 사용한다면
