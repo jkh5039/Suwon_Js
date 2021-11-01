@@ -96,7 +96,7 @@ public class ARManager : MonoBehaviour
             //추가할내용
             //carColor = carColors[0];
 
-
+            KH_UIManager.instance.parkingMode.SetActive(false);
             //자동차 공장에서 자동차 생성 //맵 생성
             GameObject car = Instantiate(carFactory);
             //생성된 자동차를 indicator위치에 놓는다

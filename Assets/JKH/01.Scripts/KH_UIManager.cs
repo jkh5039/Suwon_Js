@@ -31,6 +31,10 @@ public class KH_UIManager : MonoBehaviour
     //ParkingMode 일때만 실행
     public GameObject parkUI;
     public GameObject parkExitNotice;
+
+    //파킹모드ui
+    public GameObject parkingMode;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -168,6 +172,8 @@ public class KH_UIManager : MonoBehaviour
         MultiImage.instance.isNotice = false;
         //indicator 활성화
         ARManager.instance.isIndicator = false;
+        parkingMode.SetActive(true); //파킹모드킨다
+
         //메인화면으로
         SceneManager.LoadScene("KH_Menu");
     }
