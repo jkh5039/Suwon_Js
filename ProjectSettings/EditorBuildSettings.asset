@@ -5,18 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/JKH/02.Scenes/KH_Menu.unity
     guid: b5befc42cfa373442b586c49e450ffa9
-  - enabled: 1
+  - enabled: 0
     path: Assets/JKH/02.Scenes/KH_ARDetect.unity
     guid: a2a7e5afafe31b744bf05a1aea95c712
-  - enabled: 1
-    path: Assets/JHW/00.Scene/JHW_MiniGame2.unity
+  - enabled: 0
+    path: Assets/JHW/00.Scene/Game/JHW_MiniGame2.unity
     guid: 4b95c8d33aba1d74f886cc9b55e44a76
-  - enabled: 1
-    path: Assets/JHW/00.Scene/JHW_ResultCine.unity
+  - enabled: 0
+    path: Assets/JHW/00.Scene/Game/JHW_ResultCine.unity
     guid: 0e696743178659841a40741295fdb74f
+  - enabled: 1
+    path: Assets/JHW/00.Scene/Network/JHW_ConnectionScene.unity
+    guid: 6046571455b87a1438bcb37f3f28e599
+  - enabled: 1
+    path: Assets/JHW/00.Scene/Network/JHW_LobbyScene.unity
+    guid: 1a1514c3006fe2b4383cd72d3d7799bd
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: ca4b6dd7868db364b84700e3c14c8b33, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 51609e2ed6433404f8baf438f58d02bc, type: 2}
