@@ -460,7 +460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &221020918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +931,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSpec: {fileID: 221020917}
-  details: {fileID: 782702175}
+  detailsAudi: {fileID: 0}
+  detailsBenz: {fileID: 0}
+  detailsGenesis: {fileID: 0}
+  confirm: {fileID: 0}
+  parkUI: {fileID: 0}
+  parkExitNotice: {fileID: 0}
+  parkingMode: {fileID: 0}
 --- !u!4 &308864086
 Transform:
   m_ObjectHideFlags: 0
