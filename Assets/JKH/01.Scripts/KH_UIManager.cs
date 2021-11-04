@@ -138,7 +138,6 @@ public class KH_UIManager : MonoBehaviour
         MultiImage.instance.isNotice = true;
         //indicator 지금은 비활성화, parking 누를떄 활성화 한다.
         ARManager.instance.isIndicator = false;
-        
     }
     public void onClickParking()
     {
