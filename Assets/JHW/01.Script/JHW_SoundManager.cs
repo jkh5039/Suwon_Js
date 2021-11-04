@@ -5,14 +5,14 @@ using UnityEngine;
 public class JHW_SoundManager : MonoBehaviour
 {
     public static JHW_SoundManager instance;
-    AudioSource MyAudio;
+    public AudioSource MyAudio;
 
     public AudioClip buttonClick;
     public AudioClip engineOn;
     public AudioClip[] Crash;
     public AudioClip accel;
     public AudioClip back;
-    public AudioClip BGM;
+    public AudioClip success;
 
 
     // Start is called before the first frame update
@@ -46,19 +46,24 @@ public class JHW_SoundManager : MonoBehaviour
     public void PlayCrash()
     {
         int i = Random.Range(0, 4);
-        MyAudio.PlayOneShot(Crash[i]);
+        MyAudio.PlayOneShot(Crash[i], 0.2f) ;
     }
     public void PlayAccel()
     {
-        MyAudio.PlayOneShot(accel);
+        if (MyAudio.isPlaying!=accel)
+        {
+            MyAudio.PlayOneShot(accel, 0.1f);
+        }
     }
     public void PlayBack()
     {
-        MyAudio.PlayOneShot(back);
+        if(MyAudio.isPlaying!=back)
+        {
+        MyAudio.PlayOneShot(back,0.2f);
+        }
     }
-    public void PlayBGM()
+    public void PlaySuccess()
     {
-        MyAudio.PlayOneShot(BGM);
+        MyAudio.PlayOneShot(success);
     }
-    
 }

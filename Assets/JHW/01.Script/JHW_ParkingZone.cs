@@ -43,6 +43,7 @@ public class JHW_ParkingZone : MonoBehaviour
                 clearText.gameObject.SetActive(true);
                 crashText.text = "ºÎµúÈù È½¼ö : " + carCollider.crashCount;
                 crashText.gameObject.SetActive(true);
+                JHW_SoundManager.instance.PlaySuccess();
             }
 
             issuccess = true;

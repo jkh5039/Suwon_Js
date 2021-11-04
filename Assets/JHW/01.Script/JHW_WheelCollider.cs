@@ -79,6 +79,7 @@ public class JHW_WheelCollider : MonoBehaviour
     public void AccelBtnDown()
     {
         isaccel = true;
+        JHW_SoundManager.instance.PlayAccel();
     }
     public void AccelBtnUP()
     {
@@ -87,10 +88,12 @@ public class JHW_WheelCollider : MonoBehaviour
     public void BackBtnDown()
     {
         isback = true;
+        JHW_SoundManager.instance.PlayBack();
     }
     public void BackBtnUp()
     {
         isback = false;
+        JHW_SoundManager.instance.MyAudio.Stop();
     }
 }
 

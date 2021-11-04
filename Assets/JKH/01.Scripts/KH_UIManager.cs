@@ -129,6 +129,7 @@ public class KH_UIManager : MonoBehaviour
     //NEW Btn@@@@
     public void onClickDrive()
     {
+        JHW_SoundManager.instance.PlayButtonClick();
         SceneManager.LoadScene("JHW_MiniGame2");
     }
 
