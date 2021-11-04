@@ -13,11 +13,23 @@ public class KH_Carcolors : MonoBehaviour
     void Start()
     {
         mr = GetComponent<MeshRenderer>();
-        mr.materials[0] = carMaterials[0];
+        //mr.materials[1] = carMaterials[0];
     }
 
     
     void Update()
     {
+        if (MultiImage.instance.isAudi)
+        {
+            mr.materials[1] = carMaterials[0];
+        }
+        else if (MultiImage.instance.isBenz)
+        {
+            mr.materials[1] = carMaterials[0];
+        }
+        else if (MultiImage.instance.isGenesis)
+        {
+            mr.materials[1] = carMaterials[0];
+        }
     }
 }
