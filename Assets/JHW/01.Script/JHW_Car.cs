@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;  
+using UnityEngine.SceneManagement;
 
 public class JHW_Car : MonoBehaviour
 {
@@ -31,48 +31,56 @@ public class JHW_Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        laps_text.text = "Laps " + laps + " / 3";
+        if (SceneManager.GetActiveScene().name == "JHW_MiniGame2")
+        {
+            laps_text.text = "Laps " + laps + " / 3";
+
+        }
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        
 
-        if (other.transform.CompareTag("obstacle")  && SceneManager.GetActiveScene().name == "KH_ARDetect")
+
+        if (other.transform.CompareTag("obstacle") && SceneManager.GetActiveScene().name == "JHW_MiniGame1")
         {
             print("자동차가 충돌했습니다 : " + crashCount);
             crashCount++;
+            JHW_SoundManager.instance.PlayCrash();
         }
         //----------------------------------------------------------
-        if (other.transform==startFinishLine.transform && transform.root.name == "RaceGame")
+        if (SceneManager.GetActiveScene().name == "JHW_MiniGame2")
         {
-            if(isCP1==true && isCP2==true && isCP3==true)
+
+            if (other.transform == startFinishLine.transform)
             {
-                laps++;
+                if (isCP1 == true && isCP2 == true && isCP3 == true)
+                {
+                    laps++;
 
-                isCP1 = false;
-                isCP2 = false;
-                isCP3 = false;
+                    isCP1 = false;
+                    isCP2 = false;
+                    isCP3 = false;
+                }
+                print("피니시라인 통과 Lap : " + laps);
+                //laps_text.text = "Laps " + laps + " / 3";
             }
-            print("피니시라인 통과 Lap : " + laps) ;
-            //laps_text.text = "Laps " + laps + " / 3";
-
-        }
-        if(other.transform==checkPoint_1.transform)
-        {
-            print("체크포인트 1 통과");
-            isCP1 = true;
-        }
-        if (other.transform == checkPoint_2.transform)
-        {
-            print("체크포인트 2 통과");
-            isCP2 = true;
-        }
-        if (other.transform == checkPoint_3.transform)
-        {
-            print("체크포인트 3 통과");
-            isCP3 = true;
+            if (other.transform == checkPoint_1.transform)
+            {
+                print("체크포인트 1 통과");
+                isCP1 = true;
+            }
+            if (other.transform == checkPoint_2.transform)
+            {
+                print("체크포인트 2 통과");
+                isCP2 = true;
+            }
+            if (other.transform == checkPoint_3.transform)
+            {
+                print("체크포인트 3 통과");
+                isCP3 = true;
+            }
         }
     }
 

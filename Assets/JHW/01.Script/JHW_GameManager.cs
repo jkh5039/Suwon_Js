@@ -16,7 +16,7 @@ public class JHW_GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (car.laps == 3)
+        if (car.laps == 3 && SceneManager.GetActiveScene().name == "JHW_MiniGame2")
         {
             SceneManager.LoadScene("JHW_ResultCine");
         }    
