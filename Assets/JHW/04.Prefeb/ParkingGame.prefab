@@ -8267,9 +8267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aeac0e4780024245b023a6ab91bb069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carColor: {fileID: 0}
-  carColors: []
-  carMaterials: []
+  carMaterials:
+  - {fileID: 2100000, guid: ee946cc035fc70c48ae6c571f70bdf1e, type: 2}
+  - {fileID: 2100000, guid: 9a375ca52a464954788a7e051c545275, type: 2}
+  - {fileID: 2100000, guid: e4294a7b616d6ab4b83ebb718d79b56b, type: 2}
 --- !u!1 &9210966880376876572
 GameObject:
   m_ObjectHideFlags: 0
