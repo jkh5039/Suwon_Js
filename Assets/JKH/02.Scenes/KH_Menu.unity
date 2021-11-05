@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 1354234060}
   - component: {fileID: 1354234059}
   m_Layer: 5
-  m_Name: Button
+  m_Name: FlyHigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

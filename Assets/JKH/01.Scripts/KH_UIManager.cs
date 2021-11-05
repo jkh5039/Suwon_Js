@@ -182,4 +182,17 @@ public class KH_UIManager : MonoBehaviour
         parkExitNotice.SetActive(false);
         ARManager.instance.isIndicator = true;
     }
+
+    void ItweenPractice()
+    {
+        //iTweenAdress: http://www.pixelplacement.com/itween/documentation.php
+        iTween.ScaleTo(parkUI, iTween.Hash(
+            "x", 1,
+            "y", 1,
+            "z", 1,
+            "time", 1,
+            "easetype", iTween.EaseType.easeInOutBack,
+            "oncompletetarget", gameObject,
+            "oncomplete", "OnCompleteAni"));
+    }
 }
