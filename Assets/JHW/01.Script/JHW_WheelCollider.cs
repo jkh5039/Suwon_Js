@@ -95,6 +95,10 @@ public class JHW_WheelCollider : MonoBehaviour
         isback = false;
         JHW_SoundManager.instance.MyAudio.Stop();
     }
+    public void Btnklaxon()
+    {
+        JHW_SoundManager.instance.PlayKlaxon();
+    }    
 }
 
 [System.Serializable]

@@ -13,6 +13,8 @@ public class JHW_SoundManager : MonoBehaviour
     public AudioClip accel;
     public AudioClip back;
     public AudioClip success;
+    public AudioClip klaxon;
+
 
 
     // Start is called before the first frame update
@@ -36,7 +38,7 @@ public class JHW_SoundManager : MonoBehaviour
 
     public void PlayButtonClick()
     {
-        MyAudio.PlayOneShot(buttonClick);
+        MyAudio.PlayOneShot(buttonClick,0.5f);
     }
 
     public void PlayEngineOn()
@@ -65,5 +67,9 @@ public class JHW_SoundManager : MonoBehaviour
     public void PlaySuccess()
     {
         MyAudio.PlayOneShot(success);
+    }
+    public void PlayKlaxon()
+    {
+        MyAudio.PlayOneShot(klaxon,0.5f);
     }
 }
