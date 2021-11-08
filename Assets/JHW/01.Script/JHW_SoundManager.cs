@@ -14,7 +14,7 @@ public class JHW_SoundManager : MonoBehaviour
     public AudioClip back;
     public AudioClip success;
     public AudioClip klaxon;
-
+    public AudioClip CountDown;
 
 
     // Start is called before the first frame update
@@ -70,6 +70,10 @@ public class JHW_SoundManager : MonoBehaviour
     }
     public void PlayKlaxon()
     {
-        MyAudio.PlayOneShot(klaxon,0.5f);
+        MyAudio.PlayOneShot(klaxon,0.7f);
+    }
+    public void PlayCountDown()
+    {
+        MyAudio.PlayOneShot(CountDown);
     }
 }

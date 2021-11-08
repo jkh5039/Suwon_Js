@@ -1284,6 +1284,7 @@ MonoBehaviour:
   back: {fileID: 8300000, guid: d59e13c9c5f82084b98f0c1d7ae91843, type: 3}
   success: {fileID: 8300000, guid: 912f800b69e838042ba92598be541e04, type: 3}
   klaxon: {fileID: 8300000, guid: c81aa41b1cfae9f4f989270a471adccd, type: 3}
+  CountDown: {fileID: 8300000, guid: c6b988b6efa333a41bc59be30e47a88c, type: 3}
 --- !u!4 &2031792635
 Transform:
   m_ObjectHideFlags: 0

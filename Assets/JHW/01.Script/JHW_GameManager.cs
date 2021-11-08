@@ -13,8 +13,11 @@ public class JHW_GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       if(SceneManager.GetActiveScene().name == "JHW_MiniGame2")
+        {
         Time.timeScale = 0f;
         StartCoroutine(Countdown(3));
+        }
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class JHW_GameManager : MonoBehaviour
 
     IEnumerator Countdown(int seconds)
     {
+        JHW_SoundManager.instance.PlayCountDown();
         int count = seconds;
 
         while (count > 0)
